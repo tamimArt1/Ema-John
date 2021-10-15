@@ -1,0 +1,55 @@
+.container {
+	margin: 1rem;
+	border-bottom: 3px solid gray;
+	padding: 1rem;
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+
+	img {
+		width: 80%;
+	}
+
+	.product_info {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+
+		h1 {
+			font-size: 1.5rem;
+			color: rgb(75, 75, 255);
+			font-weight: 500;
+		}
+
+		h2 {
+			font-weight: 500;
+		}
+
+		p {
+			font-size: 1.1rem;
+		}
+
+		.add_button {
+			width: 200px;
+			padding: .5rem;
+			border: none;
+			cursor: pointer;
+			font-family: inherit;
+			font-size: 1.1rem;
+			font-weight: bold;
+			background-color: goldenrod;
+			border-radius: 1.5rem;
+			transition: all 1s ease-in-out;
+
+			&:hover {
+				background-color: rgb(235, 183, 53);
+				border-radius: 0.7rem;
+			}
+		}
+	}
+}
+
+#stock {
+	color: red;
+	font-size: 1.5rem;
+	font-weight: bold;
+}

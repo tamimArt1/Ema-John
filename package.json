@@ -1,0 +1,22 @@
+{
+  "name": "ema-john",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "jotai": "^1.4.0",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "react-rating": "^2.0.5",
+    "zustand": "^3.5.13"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^1.0.0",
+    "sass": "^1.42.1",
+    "vite": "^2.6.4"
+  },
+  "license": "ISC"
+}
