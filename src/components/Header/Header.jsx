@@ -1,10 +1,11 @@
 import cls from './Header.module.scss';
 import logo from '../../images/logo.png';
-import { totalItemAtom } from '../../store';
+import { totalItemAtom, searchAtom } from '../../store';
 import { useAtom } from 'jotai';
 
 const Header = () => {
   const [allProducts] = useAtom(totalItemAtom);
+  const [search, setSearch] = useAtom(searchAtom);
   return (
     <div className={cls.header}>
       <img src={logo} className={cls.logo} alt='logo' />
@@ -17,7 +18,9 @@ const Header = () => {
         <input
           type='text'
           placeholder='Search items'
+          value={search}
           className={cls.search_input}
+          onChange={(e) => setSearch(e.target.value)}
         />
         <i className='fas fa-shopping-cart'></i>
         <h1>{allProducts}</h1>
