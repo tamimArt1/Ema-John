@@ -11,10 +11,10 @@ const Cart = () => {
         <h1>Order Summary</h1>
         <h3>Items Ordered : {totalItem}</h3>
       </div>
-      <p>Items : ${getBasePrice()}</p>
-      <p>Shopping & Handling : ${getDelivaryCharge()}</p>
-      <p>Total Before Tax : ${totalBeforeTax()}</p>
-      <p>Estimated Tax : ${getTax()}</p>
+      <p className={cls.cart_p}>Items : ${getBasePrice()}</p>
+      <p className={cls.cart_p}>Shopping & Handling : ${getDelivaryCharge()}</p>
+      <p className={cls.cart_p}>Total Before Tax : ${totalBeforeTax()}</p>
+      <p className={cls.cart_p}>Estimated Tax : ${getTax()}</p>
       <p className={cls.total}>Order Total : ${grandTotal()}</p>
       <button className={cls.review_button}>Review Order</button>
     </div>

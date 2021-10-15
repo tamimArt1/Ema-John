@@ -9,14 +9,15 @@
 	background-color: goldenrod;
 	border-radius: 1.5rem;
 	transition: all 1s ease-in-out;
+	margin: 1rem;
 
 	&:hover {
-		background-color: rgb(235, 183, 53);
+		background-color: rgb(226, 193, 109);
 		border-radius: 0.7rem;
 	}
 }
 
-p {
+.cart_p {
 	margin: 1rem;
 	font-size: 1.2rem;
 	font-weight: 500;
@@ -25,4 +26,6 @@ p {
 .total {
 	color: red;
 	font-weight: 600;
+	margin: 1rem;
+	font-size: 1.2rem;
 }
