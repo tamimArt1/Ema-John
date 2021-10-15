@@ -1,6 +1,7 @@
+import { atomWithStorage } from 'jotai/utils';
 import { atom } from 'jotai';
 
-export const productsAtom = atom([]);
+export const productsAtom = atomWithStorage('ema-john-products', []);
 
 export const totalItemAtom = atom((get) => {
   const currentProducts = get(productsAtom);
