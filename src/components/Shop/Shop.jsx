@@ -11,7 +11,7 @@ const Shop = () => {
   const [text] = useAtom(getSearchTextAtom);
 
   useEffect(() => {
-    fetch('./products.JSON')
+    fetch('https://limitless-depths-38704.herokuapp.com/products')
       .then((res) => res.json())
       .then((data) => {
         const shuffledArray = data.sort((a, b) => 0.5 - Math.random());
