@@ -1,6 +1,7 @@
 import { getProductsAtom, totalItemAtom } from '../../store';
 import { useAtom } from 'jotai';
 import cls from './Cart.module.scss';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const [selectedProducts] = useAtom(getProductsAtom);
@@ -16,7 +17,9 @@ const Cart = () => {
       <p className={cls.cart_p}>Total Before Tax : ${totalBeforeTax()}</p>
       <p className={cls.cart_p}>Estimated Tax : ${getTax()}</p>
       <p className={cls.total}>Order Total : ${grandTotal()}</p>
-      <button className={cls.review_button}>Review Order</button>
+      <Link to='/orders'>
+        <button className={cls.review_button}>Review Order</button>
+      </Link>
     </div>
   );
 

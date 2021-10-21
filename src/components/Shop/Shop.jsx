@@ -31,7 +31,7 @@ const Shop = () => {
     <section className={cls.container}>
       <div className={cls.product_box}>
         {filteredProducts.map((pd) => (
-          <Product key={pd.key} product={pd} />
+          <Product key={pd._id} product={pd} />
         ))}
       </div>
       <div className={cls.cart_box}>

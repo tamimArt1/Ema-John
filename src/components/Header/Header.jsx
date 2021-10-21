@@ -2,6 +2,7 @@ import cls from './Header.module.scss';
 import logo from '../../images/logo.png';
 import { totalItemAtom, searchAtom } from '../../store';
 import { useAtom } from 'jotai';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [allProducts] = useAtom(totalItemAtom);
@@ -10,9 +11,9 @@ const Header = () => {
     <div className={cls.header}>
       <img src={logo} className={cls.logo} alt='logo' />
       <nav>
-        <a href='/shop'>Shop</a>
-        <a href='/orders'>Orders Review</a>
-        <a href='/inventory'>Manage Inventory</a>
+        <Link to='/shop'>Shop</Link>
+        <Link to='/orders'>Orders Review</Link>
+        <Link to='/inventory'>Manage Inventory</Link>
       </nav>
       <div className={cls.search_box}>
         <input

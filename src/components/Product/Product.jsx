@@ -6,7 +6,7 @@ import './Product.css';
 
 const Product = ({ product }) => {
   const [selectedProducts, setSelectedProducts] = useAtom(productsAtom);
-  const { img, name, seller, price, stock, key, star } = product;
+  const { img, name, seller, price, stock, _id, star } = product;
   return (
     <section className={cls.container}>
       <img src={img} alt='product image' />
@@ -31,17 +31,20 @@ const Product = ({ product }) => {
   );
 
   function addProductHandler() {
-    const isAddedAlready = selectedProducts.find((pd) => pd.key === key);
+    const isAddedAlready = selectedProducts.find((pd) => pd._id === _id);
     if (isAddedAlready) {
       const newList = [...selectedProducts];
       for (const item of newList) {
-        if (item.key === key) {
+        if (item._id === _id) {
           item.quantity++;
         }
       }
       setSelectedProducts(newList);
     } else {
-      const newList = [...selectedProducts, { key, price, quantity: 1 }];
+      const newList = [
+        ...selectedProducts,
+        { img, name, _id, price, quantity: 1 },
+      ];
       setSelectedProducts(newList);
     }
   }
