@@ -26,6 +26,7 @@ function SingleSelectedProduct({ product }) {
       <img src={img} alt='product name' />
       <div className={cls.right}>
         <p className={cls.ptag}>{name}</p>
+        <p className={cls.ptag}>Quantity : {quantity}</p>
         <p className={cls.ptag}>
           Price : {price} * <span className={cls.quantity}>{quantity}</span> ={' '}
           {price * quantity}

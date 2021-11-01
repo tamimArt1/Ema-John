@@ -2,6 +2,10 @@ import Header from './components/Header/Header';
 import Shop from './components/Shop/Shop';
 import Orders from './components/Orders/Orders';
 import Inventory from './components/Inventory/Inventory';
+import PrivateRoute from './components/PrivateRoute';
+import Checkout from './components/Checkout/Checkout';
+import Login from './components/Login/Login';
+import Signup from './components/Signup/Signup';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const App = () => {
@@ -13,6 +17,11 @@ const App = () => {
         <Route path='/shop' component={Shop} />
         <Route path='/orders' component={Orders} />
         <Route path='/inventory' component={Inventory} />
+        <Route path='/login' component={Login} />
+        <Route path='/signup' component={Signup} />
+        <PrivateRoute path='/checkout'>
+          <Checkout />
+        </PrivateRoute>
         <Route path='*' component={NotFound} />
       </Switch>
     </Router>

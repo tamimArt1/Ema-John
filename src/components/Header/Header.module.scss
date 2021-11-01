@@ -32,18 +32,21 @@
 		color: gainsboro;
 		display: flex;
 		align-items: center;
-		justify-content: center;
+		justify-content: space-around;
 		
 		i {
 			font-size: 25px;
 			margin-right: 5px;
 		}
-
+		.search_left {
+			display: flex;
+			align-items: center;
+		}
 		.search_input {
 			margin-right: 2rem;
 			padding: 10px;
 			border-radius: 5px;
-			width: 35%;
+			width: 500px;
 			border: none;
 			font-size: 1.5rem;
 			font-family: inherit;
@@ -55,6 +58,27 @@
 
 		h1 {
 			color: goldenrod;
+		}
+
+		.login_button {
+			padding: 0.5rem 1.3rem;
+			color: goldenrod;
+			font-family: inherit;
+			font-size: 1.3rem;
+			background-color: transparent;
+			border: 1px solid goldenrod;
+			cursor: pointer;
+
+			&:hover {
+				background-color: goldenrod;
+				color: black;
+			}
+		}
+
+		.display_name {
+			font-size: 1.3rem;
+			margin-right: 1rem;
+			font-weight: 500;
 		}
 	}
 }

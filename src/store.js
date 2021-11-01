@@ -1,7 +1,7 @@
 import { atomWithStorage } from 'jotai/utils';
 import { atom } from 'jotai';
 
-// ### products state
+// ### products state ----------------------------------------------------------
 export const productsAtom = atomWithStorage('ema-john-products', []);
 
 // derived state of products
@@ -16,8 +16,11 @@ export const totalItemAtom = atom((get) => {
 
 export const getProductsAtom = atom((get) => get(productsAtom));
 
-// ### search text state
+// ### search text state -------------------------------------------------------
 export const searchAtom = atom('');
 
 // derived state of text
 export const getSearchTextAtom = atom((get) => get(searchAtom).toLowerCase());
+
+// ### userInfo ----------------------------------------------------------------
+export const userInfoAtom = atom({});

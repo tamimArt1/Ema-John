@@ -1,0 +1,61 @@
+.login_container {
+	display: grid;
+	place-items: center;
+	padding: 2rem;
+}
+
+.login_input {
+	margin-bottom: 1rem;
+	padding: 10px;
+	border-radius: 5px;
+	width: 500px;
+	border: 2px solid rgb(201, 199, 199);
+	font-size: 1.5rem;
+	font-family: inherit;
+
+	&:focus {
+		border: none;
+		outline: 2px solid goldenrod;
+	}
+}
+
+.login_btn {
+	width: 200px;
+	padding: .5rem;
+	border: none;
+	cursor: pointer;
+	font-family: inherit;
+	font-size: 1.1rem;
+	font-weight: bold;
+	background-color: goldenrod;
+	border-radius: 1.5rem;
+	transition: background-color 0.7s ease-in-out;
+
+	&:hover {
+		background-color: rgb(226, 193, 109);
+	}
+}
+
+.google_btn {
+	width: 100%;
+	padding: 1rem;
+	font-family: inherit;
+	font-size: 1.3rem;
+	cursor: pointer;
+	font-weight: bold;
+	border: none;
+	background-color: goldenrod;
+	color: rgb(34, 33, 33);
+	border-radius: 57px;
+	margin-top: 2rem;
+	transition: background-color 0.7s ease-in-out;
+
+	&:hover {
+		background-color: rgb(226, 193, 109);
+	}
+}
+
+.wrapper {
+	background-color: gainsboro;
+	padding: 2rem;
+}

@@ -1,11 +1,12 @@
 import { getProductsAtom, totalItemAtom } from '../../store';
 import { useAtom } from 'jotai';
 import cls from './Cart.module.scss';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Cart = () => {
   const [selectedProducts] = useAtom(getProductsAtom);
   const [totalItem] = useAtom(totalItemAtom);
+  const { pathname } = useLocation();
   return (
     <div>
       <div style={{ textAlign: 'center' }}>
@@ -17,9 +18,15 @@ const Cart = () => {
       <p className={cls.cart_p}>Total Before Tax : ${totalBeforeTax()}</p>
       <p className={cls.cart_p}>Estimated Tax : ${getTax()}</p>
       <p className={cls.total}>Order Total : ${grandTotal()}</p>
-      <Link to='/orders'>
-        <button className={cls.review_button}>Review Order</button>
-      </Link>
+      {pathname === '/orders' ? (
+        <Link to='/checkout'>
+          <button className={cls.review_button}>Proceed Checkout</button>
+        </Link>
+      ) : (
+        <Link to='/orders'>
+          <button className={cls.review_button}>Review Order</button>
+        </Link>
+      )}
     </div>
   );
 
