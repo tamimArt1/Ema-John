@@ -1,6 +1,6 @@
 import cls from './Header.module.scss';
 import logo from '../../images/logo.png';
-import { totalItemAtom, searchAtom } from '../../store';
+import { totalItemAtom, searchAtom, userInfoAtom } from '../../store';
 import { useAtom } from 'jotai';
 import { Link } from 'react-router-dom';
 import useFirebase from '../../hooks/useFirebase';
@@ -8,7 +8,8 @@ import useFirebase from '../../hooks/useFirebase';
 const Header = () => {
   const [allProducts] = useAtom(totalItemAtom);
   const [search, setSearch] = useAtom(searchAtom);
-  const { user, logOut } = useFirebase();
+  const [user] = useAtom(userInfoAtom);
+  const { logOut } = useFirebase();
   return (
     <div className={cls.header}>
       <img src={logo} className={cls.logo} alt='logo' />

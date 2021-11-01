@@ -25,8 +25,8 @@ const useFirebase = () => {
   const emailPasswordSignUp = (email, password) => {
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)
-      .then((user) => {
-        setUser(user);
+      .then((userCredential) => {
+        setUser(userCredential.user);
       })
       .catch((error) => {
         setUser({ err: error.message });
@@ -35,8 +35,8 @@ const useFirebase = () => {
   const emailPasswordLogin = (email, password) => {
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
-      .then((user) => {
-        setUser(user);
+      .then((userCredential) => {
+        setUser(userCredential.user);
       })
       .catch((error) => {
         setUser({ err: error.message });
