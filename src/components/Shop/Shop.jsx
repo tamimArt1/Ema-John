@@ -2,23 +2,40 @@ import { useEffect, useState } from 'react';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import cls from './Shop.module.scss';
-import { getSearchTextAtom } from '../../store';
+import {
+  getSearchTextAtom,
+  apiProductsAtom,
+  apiFilteredProductsAtom,
+} from '../../store';
 import { useAtom } from 'jotai';
+import axios from 'axios';
+import { useQuery } from 'react-query';
 
 const Shop = () => {
-  const [products, setProducts] = useState([]);
-  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [products, setProducts] = useAtom(apiProductsAtom);
+  const [filteredProducts, setFilteredProducts] = useAtom(
+    apiFilteredProductsAtom
+  );
   const [text] = useAtom(getSearchTextAtom);
+  const { isLoading, isError, data } = useQuery(
+    'products',
+    async () => {
+      const { data } = await axios.get(
+        'https://limitless-depths-38704.herokuapp.com/products'
+      );
+      return data;
+    },
+    {
+      refetchOnWindowFocus: false,
+      refetchInterval: 180000,
+      staleTime: 300000,
+    }
+  );
 
   useEffect(() => {
-    fetch('https://limitless-depths-38704.herokuapp.com/products')
-      .then((res) => res.json())
-      .then((data) => {
-        const shuffledArray = data.sort((a, b) => 0.5 - Math.random());
-        setProducts(shuffledArray);
-        setFilteredProducts(shuffledArray);
-      });
-  }, []);
+    setProducts(data);
+    setFilteredProducts(data);
+  }, [data]);
 
   useEffect(() => {
     const tempProducts = products.filter((pd) =>
@@ -27,6 +44,8 @@ const Shop = () => {
     setFilteredProducts(tempProducts);
   }, [text]);
 
+  if (isLoading) return <h1>Loading...</h1>;
+  if (isError) return <h1>Error...</h1>;
   return (
     <section className={cls.container}>
       <div className={cls.product_box}>

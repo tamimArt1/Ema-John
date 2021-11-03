@@ -24,3 +24,9 @@ export const getSearchTextAtom = atom((get) => get(searchAtom).toLowerCase());
 
 // ### userInfo ----------------------------------------------------------------
 export const userInfoAtom = atom({});
+
+// ### allProducts ----------------------------------------------------------------
+export const apiProductsAtom = atom([]);
+
+// ### filteredProducts ----------------------------------------------------------------
+export const apiFilteredProductsAtom = atom([]);
